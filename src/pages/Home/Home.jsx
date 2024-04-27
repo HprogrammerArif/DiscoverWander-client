@@ -1,8 +1,23 @@
+import { useLoaderData } from "react-router-dom";
+import TourSpotCard from "../TourSpotCard/TourSpotCard";
+import Banner from "../Banner/Banner";
 
 const Home = () => {
+
+  const allTourSpot = useLoaderData()
+
   return (
     <div>
-      <h2 className="text-3xl font-poppins font-bold">This home page</h2>
+      <div className="my-8 ">
+      <Banner></Banner>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {allTourSpot.map((TourSpot, index) => (
+        <TourSpotCard key={index} TourSpot={TourSpot} />
+      ))}
+      </div>
+
     </div>
   );
 };
