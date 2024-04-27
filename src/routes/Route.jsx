@@ -3,6 +3,9 @@ import Root from "../layouts/Root";
 import Home from "../pages/Home/Home";
 import AddTourSpot from "../pages/AddTourSpot/AddTourSpot";
 import UpdateTourSpot from "../pages/UpdateTourSpot/UpdateTourSpot";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
+import TourDetails from "../pages/TourDetails/TourDetails";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +18,17 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/touristSpot')
       },
       {
-          path: '/',
+          path: '/tourDetails/:id',
+          element:<TourDetails></TourDetails>
           
+      },
+      {
+        path: 'login',
+        element:<Login></Login>
+      },
+      {
+        path: 'register',
+        element:<Register></Register>
       },
       {
         path: '/addTourSpot',
