@@ -45,10 +45,11 @@ const AddTourSpot = () => {
       if (data.insertedId) {
         Swal.fire({
           title: "Success",
-          text: "Coffee added successfully",
+          text: "Tourist Spot added successfully",
           icon: "success",
           confirmButtonText: "Cool",
         });
+        form.reset();
       }
     })
 
@@ -99,6 +100,7 @@ const AddTourSpot = () => {
                   id="name"
                   type="text"
                   name="names"
+                  required
                   placeholder="Enter TourSpot name"
                   className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 focus:ring-violet-400 border-gray-700"
                 />
@@ -111,6 +113,7 @@ const AddTourSpot = () => {
                 <input
                   id="name"
                   type="text"
+                  required
                   name="countryNames"
                   placeholder="Enter country name"
                   className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 focus:ring-violet-400 border-gray-700"
@@ -125,6 +128,7 @@ const AddTourSpot = () => {
                   id="name"
                   type="text"
                   name="location"
+                  required
                   placeholder="Enter your location"
                   className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 focus:ring-violet-400 border-gray-700"
                 />
@@ -137,6 +141,7 @@ const AddTourSpot = () => {
                 <input
                   id="cost"
                   type="number"
+                  required
                   name="averageCost"
                   placeholder="Enter Average Cost"
                   className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 focus:ring-violet-400 border-gray-700"
@@ -150,6 +155,7 @@ const AddTourSpot = () => {
                 <input
                   id="seasonality"
                   type="text"
+                  required
                   name="seasonality"
                   placeholder="winter/summer"
                   className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 focus:ring-violet-400 border-gray-700"
@@ -164,6 +170,7 @@ const AddTourSpot = () => {
                   id="travel_time"
                   type="text"
                   name="travelTime"
+                  required
                   placeholder="15 days"
                   className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 focus:ring-violet-400 border-gray-700"
                 />
@@ -176,6 +183,7 @@ const AddTourSpot = () => {
                 <input
                   id="totaVisitorsPerYear"
                   type="text"
+                  required
                   name="totaVisitorsPerYear"
                   placeholder="Enter totaVisitorsPerYear"
                   className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 focus:ring-violet-400 border-gray-700"
@@ -190,6 +198,7 @@ const AddTourSpot = () => {
                   id="userEmail"
                   type="email"
                   name="email"
+                  required
                   placeholder="Enter User Email"
                   className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 focus:ring-violet-400 border-gray-700"
                 />
@@ -203,6 +212,7 @@ const AddTourSpot = () => {
                   id="image"
                   type="url"
                   name="photo"
+                  required
                   placeholder="Enter photo url"
                   className="w-full rounded-md focus:ring focus:ring-opacity-75 text-gray-900 focus:ring-violet-400 border-gray-700"
                 />
@@ -216,6 +226,7 @@ const AddTourSpot = () => {
                   id="bio"
                   placeholder="Description"
                   name="description"
+                  required
                   className="w-full rounded-md focus:ring focus:ring-opacity-75  text-black focus:dark:ring-violet-600 dark:border-gray-300"
                 ></textarea>
               </div>

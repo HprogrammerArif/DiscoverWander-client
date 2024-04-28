@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const TourSpotCard = ({ TourSpot }) => {
-  console.log(TourSpot);
+  //console.log(TourSpot);
 
   const {
     name,
@@ -19,10 +19,10 @@ const TourSpotCard = ({ TourSpot }) => {
 
   return (
     <div>
-      <div className="card card-compact  bg-base-100 shadow-xl ">
+      <div className="card card-compact  h-[450px] bg-base-100 shadow-xl ">
         <figure>
           <img
-            className="max-h-[380px] w-full animate__animated animate__pulse"
+            className=" object-cover p-4  w-full animate__animated animate__pulse"
             src={photo}
           />
         </figure>
@@ -32,7 +32,7 @@ const TourSpotCard = ({ TourSpot }) => {
           </h2>
           <p>{description}</p>
           <div className="card-actions">
-            <Link to={`/tourDetails/${_id}`}>
+            <Link to={`/tourSpot/${_id}`}>
               <button className="btn bg-violet-500 animate__animated animate__pulse animate__delay-2s">
                 View Details
               </button>

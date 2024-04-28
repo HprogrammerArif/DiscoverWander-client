@@ -14,32 +14,40 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/touristSpot')
+        loader: () => fetch("http://localhost:5000/touristSpot"),
       },
       {
-          path: '/tourDetails/:id',
-          element:<PrivateRoute><TourDetails></TourDetails></PrivateRoute>
-          
+        path: "/tourSpot/:id",
+        element: (
+          <PrivateRoute>
+            <TourDetails></TourDetails>
+          </PrivateRoute>
+        ),
+        loader: ({params}) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
       },
       {
-        path: 'login',
-        element:<Login></Login>
+        path: "login",
+        element: <Login></Login>,
       },
       {
-        path: 'register',
-        element:<Register></Register>
+        path: "register",
+        element: <Register></Register>,
       },
       {
-        path: '/addTourSpot',
-        element: <AddTourSpot></AddTourSpot>
+        path: "/addTourSpot",
+        element: (
+          <PrivateRoute>
+            <AddTourSpot></AddTourSpot>
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/updateTourSpot',
-        element: <UpdateTourSpot></UpdateTourSpot>
-      }
-    ]
+        path: "/updateTourSpot",
+        element: <UpdateTourSpot></UpdateTourSpot>,
+      },
+    ],
   },
 ]);
 
