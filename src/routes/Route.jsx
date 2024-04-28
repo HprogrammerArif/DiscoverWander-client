@@ -6,6 +6,7 @@ import UpdateTourSpot from "../pages/UpdateTourSpot/UpdateTourSpot";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import TourDetails from "../pages/TourDetails/TourDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
           path: '/tourDetails/:id',
-          element:<TourDetails></TourDetails>
+          element:<PrivateRoute><TourDetails></TourDetails></PrivateRoute>
           
       },
       {
