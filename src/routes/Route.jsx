@@ -8,11 +8,13 @@ import Register from "../pages/Register/Register";
 import TourDetails from "../pages/TourDetails/TourDetails";
 import PrivateRoute from "./PrivateRoute";
 import AllTouristSpots from "../pages/AllTouristSpots/AllTouristSpots";
+import NotFound from "../pages/Error/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: "/",

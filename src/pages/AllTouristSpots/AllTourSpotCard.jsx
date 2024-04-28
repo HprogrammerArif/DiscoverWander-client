@@ -31,7 +31,7 @@ const AllTourSpotCard = ({ TourSpot }) => {
           </div>
           <h1 className="text-3xl font-semibold ">{name}</h1>
           <p className=" flex-1 py-4">
-          <span className="font-bold ">Office Descriotion:</span>{` ${description}`}
+          <span className="font-bold ">Descriotion:</span>{` ${description}`}
           </p>
 
           <div className="flex items-center justify-between mb-4 ">
@@ -45,7 +45,7 @@ const AllTourSpotCard = ({ TourSpot }) => {
 
           
           <p className="flex-1 ">
-          <span className="font-bold">price:</span>{` ${averageCost}`}
+          <span className="font-bold">price:</span>{` ${averageCost}`}$ Doller
           </p>
           <p className="flex-1 ">
           <span className="font-bold">Seasonality:</span>{` ${seasonality}`}
