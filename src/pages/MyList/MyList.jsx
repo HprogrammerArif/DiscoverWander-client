@@ -1,13 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContex } from "../../Providers/AuthProvider";
 
 const MyList = () => {
   const allMyListData = useLoaderData();
   const { user, loading } = useContext(AuthContex);
+  const [loadeduser, setLoadedUser] = useState(allMyListData);
 
   if (loading) {
-    return <span className="loading loading-bars loading-lg"></span>
+    return <span className="loading loading-bars loading-lg"></span>;
   }
 
   console.log(allMyListData);
@@ -15,8 +16,25 @@ const MyList = () => {
 
   //const userEmail = user.email;
 
-  const remaining = allMyListData.filter((stat) => stat.email === user.email);
+  const remaining = loadeduser.filter((stat) => stat.email === user.email);
   console.log(remaining);
+
+  const handleDelete = (id) => {
+    //console.log(id);
+    fetch(`http://localhost:5000/touristSpot/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          console.log('Deleted successfully');
+
+          //remove the users from the ui
+          const remainingUsers = loadeduser.filter(user => user._id !== id);
+          setLoadedUser(remainingUsers)
+        }
+      });
+  };
 
   // const {
   //   name,
@@ -36,7 +54,6 @@ const MyList = () => {
     <div>
       <h2 className="text-2xl text-center font-bold my-4">My Added List</h2>
       <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
-        
         <div className="overflow-x-auto">
           <table className="min-w-full text-xs">
             <colgroup>
@@ -70,18 +87,19 @@ const MyList = () => {
                   </td>
                   <td className="p-3">
                     <p>{singleSpot.countryNames}</p>
-                    
                   </td>
                   <td className="p-3">
                     <p>{singleSpot.totaVisitorsPerYear}</p>
-                    
                   </td>
 
                   <td className="p-3 mr-6 text-right">
                     <button className="px-3 py-2 font-semibold rounded-md bg-violet-600 text-gray-50 mb-2">
                       Update
                     </button>
-                    <button className="px-3 py-2 font-semibold rounded-md bg-red-800 text-gray-50">
+                    <button
+                      onClick={() => handleDelete(singleSpot._id)}
+                      className="px-3 py-2 font-semibold rounded-md bg-red-800 text-gray-50"
+                    >
                       Delete
                     </button>
                   </td>
