@@ -49,18 +49,18 @@ const Navbar = () => {
       </li>
       {user && (
         <li>
-          <NavLink to="myList">My List</NavLink>
+          <NavLink to="/myList">My List</NavLink>
         </li>
       )}
       <li>
-        <NavLink to="blogs">Blogs</NavLink>
+        <NavLink to="/contact">Contact</NavLink>
       </li>
     </>
   );
 
   return (
     <div className="navbar bg-base-100 shadow-sm ">
-      <div className="navbar-start w-[40%]">
+      <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -111,7 +111,7 @@ const Navbar = () => {
         {user ? (
           <>
             <button
-              className="btn bg-purple-500 text-gray-100 font-bold mr-6"
+              className="px-3 py-2 rounded-lg bg-purple-500 text-gray-100 font-semibold mr-4"
               onClick={handleLogOut}
             >
               <a>Logout</a>
@@ -178,7 +178,7 @@ const Navbar = () => {
 
           {/* sun icon */}
           <svg
-            className="swap-off fill-current w-7 h-7"
+            className="swap-off fill-current w-9 h-9"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -187,7 +187,7 @@ const Navbar = () => {
 
           {/* moon icon */}
           <svg
-            className="swap-on fill-current w-7 h-7"
+            className="swap-on fill-current w-9 h-9"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >

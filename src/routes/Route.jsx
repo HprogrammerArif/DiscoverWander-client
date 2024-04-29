@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import AllTouristSpots from "../pages/AllTouristSpots/AllTouristSpots";
 import NotFound from "../pages/Error/NotFound";
 import MyList from "../pages/MyList/MyList";
+import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/touristSpot/${params.id}`),
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
       {
         path: "login",
