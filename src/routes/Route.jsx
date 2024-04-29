@@ -68,8 +68,13 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/updateTourSpot",
-        element: <UpdateTourSpot></UpdateTourSpot>,
+        path: "/updateTourSpot/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateTourSpot></UpdateTourSpot>
+          </PrivateRoute>
+        ),
+        loader: ({params}) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
       },
     ],
   },
