@@ -1,3 +1,4 @@
+import { Typewriter } from "react-simple-typewriter";
 import Swal from "sweetalert2";
 
 const AddTourSpot = () => {
@@ -85,7 +86,10 @@ const AddTourSpot = () => {
         >
           <fieldset className="grid grid-cols-4 gap-6 p-6 w-[70%] mx-auto rounded-md shadow-sm bg-gray-900">
             <h2 className="text-3xl col-span-4 text-center font-bold">
-              Add Tourists Spot
+            <Typewriter 
+              words={ ['Add Tourists Spot']}
+              loop={true}
+              />
             </h2>
             <p className="text-center col-span-4 px-4">
               You can add any sort of Tourists spot you like. Make sure you are providing real info.

@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import React from 'react';
+import { Fade } from 'react-awesome-reveal';
 
 const TourSpotCard = ({ TourSpot }) => {
   //console.log(TourSpot);
@@ -30,7 +32,9 @@ const TourSpotCard = ({ TourSpot }) => {
           <h2 className="card-title animate__animated animate__bounce animate__delay-1s">
             {location}
           </h2>
+          <Fade delay={400} direction="down" triggerOnce>
           <p>{description}</p>
+      </Fade>
           <div className="card-actions">
             <Link to={`/tourSpot/${_id}`}>
               <button className="btn bg-violet-500 animate__animated animate__pulse animate__delay-2s">

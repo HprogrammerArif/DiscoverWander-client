@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContex } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Typewriter } from "react-simple-typewriter";
 
 const MyList = () => {
   const allMyListData = useLoaderData();
@@ -74,7 +75,9 @@ const MyList = () => {
 
   return (
     <div>
-      <h2 className="text-2xl text-center font-bold my-4">My Added List</h2>
+      <h2 className="text-2xl text-center font-bold my-4">
+        <Typewriter words={["My Added List"]} loop={true} />
+      </h2>
       <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
         <div className="overflow-x-auto">
           <table className="min-w-full text-xs">
@@ -115,12 +118,12 @@ const MyList = () => {
                   </td>
 
                   <td className="p-3 mr-6 text-right">
-                  {/* to={`/tourSpot/${_id}`} */}
+                    {/* to={`/tourSpot/${_id}`} */}
 
                     <Link to={`/updateTourSpot/${singleSpot._id}`}>
-                    <button className="px-3 py-2 font-semibold rounded-md bg-violet-600 text-gray-50 mb-2">
-                      Update
-                    </button>
+                      <button className="px-3 py-2 font-semibold rounded-md bg-violet-600 text-gray-50 mb-2">
+                        Update
+                      </button>
                     </Link>
                     <button
                       onClick={() => handleDelete(singleSpot._id)}

@@ -1,16 +1,23 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContex } from "../../../Providers/AuthProvider";
+import 'react-tooltip/dist/react-tooltip.css'
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContex);
   const [theme, setTheme] = useState("light");
+  const {loading} = useContext(AuthContex)
+
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
+
+  if (loading) {
+    return <span className="loading loading-bars loading-lg"></span>
+  }
 
   const handleToggle = (e) => {
     if (e.target.checked) {
@@ -44,9 +51,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/addTourSpot">Add TourSpot</NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink to="/updateTourSpot">Update TourSpot</NavLink>
-      </li>
+      </li> */}
       {user && (
         <li>
           <NavLink to="/myList">My List</NavLink>
@@ -118,9 +125,12 @@ const Navbar = () => {
             </button>
 
             <button
+            
               className="dropdown rounded-2xl dropdown-end tooltip-left tooltip "
               data-tip={user.displayName}
+              //data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}
             >
+              
               <div
                 tabIndex={0}
                 role="button"
