@@ -5,6 +5,7 @@ import Banner from "../Banner/Banner";
 const Home = () => {
 
   const allTourSpot = useLoaderData()
+  //console.log(allTourSpot);
 
   return (
     <div>

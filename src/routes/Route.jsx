@@ -9,6 +9,7 @@ import TourDetails from "../pages/TourDetails/TourDetails";
 import PrivateRoute from "./PrivateRoute";
 import AllTouristSpots from "../pages/AllTouristSpots/AllTouristSpots";
 import NotFound from "../pages/Error/NotFound";
+import MyList from "../pages/MyList/MyList";
 
 const router = createBrowserRouter([
   {
@@ -27,13 +28,23 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/touristSpot"),
       },
       {
+        path: "/myList",
+        element: (
+          <PrivateRoute>
+            <MyList></MyList>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5000/touristSpot"),
+      },
+      {
         path: "/tourSpot/:id",
         element: (
           <PrivateRoute>
             <TourDetails></TourDetails>
           </PrivateRoute>
         ),
-        loader: ({params}) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/touristSpot/${params.id}`),
       },
       {
         path: "login",
