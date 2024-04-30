@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
+import { Helmet } from "react-helmet-async";
 
 const UpdateTourSpot = () => {
   const updateDetails = useLoaderData();
@@ -75,6 +76,9 @@ const UpdateTourSpot = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Update Details || DiscoverWonder</title>
+      </Helmet>
       <section className="p-10 bg-gray-800 text-gray-50">
         <form
           onSubmit={handleUpdateTourSpot}

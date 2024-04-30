@@ -1,16 +1,21 @@
 import { useLoaderData } from "react-router-dom";
 import AllTourSpotCard from "./AllTourSpotCard";
+import { Helmet } from "react-helmet-async";
 
 const AllTouristSpots = () => {
-
-  const allTourSpot = useLoaderData()
+  const allTourSpot = useLoaderData();
 
   return (
-    <div className="grid grid-cols-1 m-6 gap-8">
+    <>
+      <Helmet>
+        <title>AllTouristSpots || DiscoverWonder</title>
+      </Helmet>
+      <div className="grid grid-cols-1 m-6 gap-8">
         {allTourSpot.map((TourSpot, index) => (
-        <AllTourSpotCard key={index} TourSpot={TourSpot} />
-      ))}
+          <AllTourSpotCard key={index} TourSpot={TourSpot} />
+        ))}
       </div>
+    </>
   );
 };
 

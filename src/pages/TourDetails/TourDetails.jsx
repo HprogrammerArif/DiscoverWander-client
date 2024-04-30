@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 
 const TourDetails = () => {
@@ -20,6 +21,9 @@ const TourDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Details || DiscoverWonder</title>
+      </Helmet>
       <section className="bg-gray-800 rounded-lg m-4 lg:m-0 text-gray-100">
         <div className="container flex flex-col mx-auto lg:flex-row">
           <div

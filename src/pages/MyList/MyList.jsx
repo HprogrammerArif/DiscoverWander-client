@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { AuthContex } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { Typewriter } from "react-simple-typewriter";
+import { Helmet } from "react-helmet-async";
 
 const MyList = () => {
   const allMyListData = useLoaderData();
@@ -75,6 +76,9 @@ const MyList = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>My List || DiscoverWonder</title>
+      </Helmet>
       <h2 className="text-2xl text-center font-bold my-4">
         <Typewriter words={["My Added List"]} loop={true} />
       </h2>

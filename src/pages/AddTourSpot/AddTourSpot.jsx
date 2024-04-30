@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Typewriter } from "react-simple-typewriter";
 import Swal from "sweetalert2";
 
@@ -77,6 +78,9 @@ const AddTourSpot = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Add Tourist Spot || DiscoverWonder</title>
+      </Helmet>
       <section className="p-10 bg-gray-800 text-gray-50">
         <form
           onSubmit={handleAddTourSpot}

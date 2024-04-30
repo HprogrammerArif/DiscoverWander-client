@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import TourSpotCard from "../TourSpotCard/TourSpotCard";
 import Banner from "../Banner/Banner";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
 
@@ -9,6 +10,9 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Home || DiscoverWonder</title>
+      </Helmet>
       <div className="my-8 ">
       <Banner></Banner>
       </div>
