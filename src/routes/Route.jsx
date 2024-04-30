@@ -21,12 +21,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/touristSpot"),
+        loader: () => fetch("https://discover-wander-server-mohammedarifs-projects.vercel.app/touristSpot"),
       },
       {
         path: "/allTourSpot",
         element: <AllTouristSpots></AllTouristSpots>,
-        loader: () => fetch("http://localhost:5000/touristSpot"),
+        loader: () => fetch("https://discover-wander-server-mohammedarifs-projects.vercel.app/touristSpot"),
       },
       {
         path: "/myList",
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             <MyList></MyList>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/touristSpot"),
+        loader: () => fetch("https://discover-wander-server-mohammedarifs-projects.vercel.app/touristSpot"),
       },
       {
         path: "/tourSpot/:id",
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/touristSpot/${params.id}`),
+          fetch(`https://discover-wander-server-mohammedarifs-projects.vercel.app/touristSpot/${params.id}`),
       },
       {
         path: "/contact",
@@ -74,7 +74,8 @@ const router = createBrowserRouter([
             <UpdateTourSpot></UpdateTourSpot>
           </PrivateRoute>
         ),
-        loader: ({params}) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`https://discover-wander-server-mohammedarifs-projects.vercel.app/touristSpot/${params.id}`),
       },
     ],
   },

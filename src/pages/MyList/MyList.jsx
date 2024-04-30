@@ -34,7 +34,7 @@ const MyList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         //console.log(id);
-        fetch(`http://localhost:5000/touristSpot/${id}`, {
+        fetch(`https://discover-wander-server-mohammedarifs-projects.vercel.app/touristSpot/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

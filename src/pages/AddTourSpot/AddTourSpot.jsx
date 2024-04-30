@@ -33,7 +33,7 @@ const AddTourSpot = () => {
 
     //send data to backend or server
 
-    fetch('http://localhost:5000/touristSpot', {
+    fetch('https://discover-wander-server-mohammedarifs-projects.vercel.app/touristSpot', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -55,7 +55,7 @@ const AddTourSpot = () => {
       }
     })
 
-    // fetch("http://localhost:5000/coffee", {
+    // fetch("https://discover-wander-server-mohammedarifs-projects.vercel.app/coffee", {
     //   method: "POST",
     //   headers: {
     //     "content-type": "application/json",

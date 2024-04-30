@@ -2,6 +2,7 @@ B9 A10 Type-01
 
 WEBSITE NAME: DiscoverWander
 Live URL: https://discoverwander-16ac4.web.app
+https://discoverwander-16ac4.web.app
 
 
 

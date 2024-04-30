@@ -51,7 +51,7 @@ const UpdateTourSpot = () => {
 
     //send data to backend or server
 
-    fetch(`http://localhost:5000/touristSpot/${_id}`, {
+    fetch(`https://discover-wander-server-mohammedarifs-projects.vercel.app/touristSpot/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
